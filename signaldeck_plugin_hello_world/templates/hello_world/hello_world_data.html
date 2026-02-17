@@ -17,12 +17,14 @@
     <h2>Keep State</h2>
     <h3>Mode</h3>
     <div class="state-row">
+        <div class="state-buttons">
          {{ renderButton("isDay",displayData) }} {{ renderButton("isC",displayData) }} {{ renderButton("isK",displayData) }}
-    </div>
+    </div></div>
     <h3>Temperature</h3>
         <div class="state-row">
+            <div class="state-buttons">
          {{ renderButton("setTemp10",displayData) }} {{ renderButton("setTemp15",displayData) }} {{ renderButton("setTemp20",displayData) }}
-    </div>
+    </div></div>
     {{ renderInputField("name_field", "text", displayData.name, displayData) }} {{ renderButton("name",displayData) }}<br/>
     <p>{{ displayData.file_name }} ({{ displayData.file_type }})</p>
     {{ renderInputField("file_field", "file", "", displayData) }} {{ renderButton("datei",displayData) }}
