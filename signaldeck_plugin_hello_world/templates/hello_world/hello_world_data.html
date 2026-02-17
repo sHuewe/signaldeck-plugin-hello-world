@@ -1,0 +1,29 @@
+{% from "core/_utils.html" import renderButton, renderStateDiv, renderInputField %}
+
+<div>
+    {{ renderStateDiv(displayData) }}
+    <h1>Hello World</h1>
+    <p>This is a simple hello world template with use of data submitting.</p>
+    <h2>Simple: Transmit one value. No state.</h2>
+    <div class="state-row">
+        <div class="state-label"> {{ renderButton("submitFoo",displayData) }}</div>
+        <div class="state-value">{{ displayData.foo }}</div>
+    </div>
+        <div class="state-row">
+        <div class="state-label"> {{ renderButton("submitNum",displayData) }}</div>
+        <div class="state-value">{{ displayData.a }}</div>
+    </div>
+
+    <h2>Keep State</h2>
+    <h3>Mode</h3>
+    <div class="state-row">
+         {{ renderButton("isDay",displayData) }} {{ renderButton("isC",displayData) }} {{ renderButton("isK",displayData) }}
+    </div>
+    <h3>Temperature</h3>
+        <div class="state-row">
+         {{ renderButton("setTemp10",displayData) }} {{ renderButton("setTemp15",displayData) }} {{ renderButton("setTemp20",displayData) }}
+    </div>
+    {{ renderInputField("name_field", "text", displayData.name, displayData) }} {{ renderButton("name",displayData) }}<br/>
+    <p>{{ displayData.file_name }} ({{ displayData.file_type }})</p>
+    {{ renderInputField("file_field", "file", "", displayData) }} {{ renderButton("datei",displayData) }}
+</div>

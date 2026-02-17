@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "signaldeck-plugin-hello-world"
+version = "0.1.0"
+description = "Hello World plugin for SignalDeck"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "signaldeck-sdk>=0.1.0",
+  "signaldeck-ui>=0.1.0",
+  "flask>=3.0",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["signaldeck_plugin_hello_world*"]
+
+[tool.setuptools.package-data]
+signaldeck_plugin_hello_world = [
+  "templates/**/*"
+]
