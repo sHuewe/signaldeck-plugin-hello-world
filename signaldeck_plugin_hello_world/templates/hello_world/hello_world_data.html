@@ -1,4 +1,4 @@
-{% from "core/_utils.html" import renderButton, renderStateDiv, renderInputField %}
+{% from "ui/_utils.html" import renderButton, renderStateDiv, renderInputField %}
 
 <div>
     {{ renderStateDiv(displayData) }}
@@ -18,7 +18,7 @@
     <h3>Mode</h3>
     <div class="state-row">
         <div class="state-buttons">
-         {{ renderButton("isDay",displayData) }} {{ renderButton("isC",displayData) }} {{ renderButton("isK",displayData) }}
+         {{ renderButton("isDay",displayData, additionalCss=" red") }} {{ renderButton("isC",displayData) }} {{ renderButton("isK",displayData) }}
     </div></div>
     <h3>Temperature</h3>
         <div class="state-row">

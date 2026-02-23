@@ -12,13 +12,19 @@ class HelloWorldWithDataProcessor(DisplayProcessor):
     def getTemplate(self,value):
         return "hello_world/hello_world_data.html"
 
+    def getAdditionalJsFiles(self,value):
+        return [("hello_world","js/hello_world.js")]
+    
+    def getAdditionalCssFiles(self,value):
+        return [("hello_world","css/hello_world.css")]
+
     def getDisplayData(self,value,actionHash,**kwargs) -> DisplayData:
         if self._uploaded_file is not None:
             kwargs["file_name"] = self._uploaded_file.filename
             kwargs["file_size"] = self._uploaded_file.content_length
             kwargs["file_type"] = self._uploaded_file.content_type
         self.logger.info(kwargs)
-        return HelloWorldDisplayData(actionHash).withData(kwargs)
+        return HelloWorldDisplayData(self.ctx, actionHash).withData(kwargs)
     
     def getBoolParams(self):
         return ["is_day","is_celsius","is_kelvin"]

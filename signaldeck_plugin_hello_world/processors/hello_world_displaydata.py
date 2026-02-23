@@ -2,8 +2,7 @@ from signaldeck_sdk import DisplayData
 import json
 
 class HelloWorldDisplayData(DisplayData):
-    def __init__(self,hash):
-        super().__init__(hash)
+
 
     def getStatefullFields(self):
         return ["is_day","is_celsius","is_kelvin","temp","name"]
